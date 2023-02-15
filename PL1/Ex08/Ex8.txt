@@ -1,0 +1,4 @@
+8.
+	a) Apenas estão listados o processo pai, e o filho pelo qual o pai nao esperou. O pai está num ciclo infinito por isso continua a correr. O filho pelo qual o pai nao esperou, tornou-se um processo Zombie logo o OS mantem a informação do processo mas nao os recursos. O outro filho, como foi fechado com o waitpid() do pai nao se tornou Zombie logo não aparece no comando ps.
+
+	b) O processo filho é um processo zombie já que terminou antes do pai e nao existia nenhum wait() ou waitpid() a espera dele.

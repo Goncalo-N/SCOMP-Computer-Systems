@@ -1,0 +1,10 @@
+5.
+	a) The process ended. When you press CTRL-C the signal SIGINT is sent to the program, and causes it to terminate.
+
+	c) The process ended. When you press CTRL-\ the signal SIGQUIT is sent to the program, and causes it to terminate and dump the core.
+
+	e) Same as if you pressed CTRL-C or CTRL-\.
+
+	f) Kill %1, kills the job number 1. This is different from the process number 1.
+
+	g) The write function is Async-signal-safe while the printf function is not.

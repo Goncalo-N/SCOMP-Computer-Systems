@@ -1,0 +1,3 @@
+a) 8 processos são criados, em que 7 deles são filhos e 1 pai.
+b) png presente na pasta
+c) "SCOMP" é imprimido 8 vezes devido a serem criados 8 processos (cada um deles executa o "printf("SCOMP");" apenas uma vez).

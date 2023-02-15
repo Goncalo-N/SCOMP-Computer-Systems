@@ -1,0 +1,8 @@
+6.
+	a) Vão ser criados 16 processos. Temos o processo inicial do programa e cada vez que itera pelo ciclo (4 vezes) duplica o numero de processos existentes.
+	
+		  |
+i=0               |-|
+i=1       |-------|-|-------|
+i=2   |---|   |---|-|---|   |---|
+i=3 |-| |-| |-| |-|-|-| |-| |-| |-|

@@ -1,0 +1,20 @@
+﻿4.
+	a) A. B vai ser 0 no filho e o PID do filho no pai. C vai ter o valor do PID de cada processo, o que vai ser diferente. D vai ter o valor do PID do pai de cada processo, o que vai ser diferente. A tem um valor fixo e é alterado em ambos os processos para o mesmo valor.
+
+	
+	b) 				|
+				| a = 0
+				|
+b = (int) fork()  	.-------| b = (int) fork()
+b = 0			|       | b = pid(filho)
+c = (int) getpid()	|       | c = (int) getpid() 
+c = pid(filho)		|       | c = pid(pai)
+d = (int) getppid()	|       | d = (int) getppid()
+d = pid(pai)		|       | d = pid(pai do pai)
+a = a + 5 = 5		|       | a = a + 5 = 5
+			|       |
+			|      
+			|
+			|
+			|
+		      Filho	Pai

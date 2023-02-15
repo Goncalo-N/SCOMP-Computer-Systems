@@ -1,0 +1,25 @@
+3.
+	a) In our case the sigaction function is the better one. The signal funcion is a worse and older version of the sigaction function, but it's a C standard function so it will work everywhere. The sigaction function, on the other hand, is an improved version of signal but it's specific to Linux. As we use Linux, sigaction is the better function.
+
+	b) The function sigaction receives 3 parameters:
+
+	   - int sig: the signal for which you set an action to.
+	   - const struct sigaction * act: the action details for sig.
+	   - struct sigaction * oact: stores the previously set action details.
+
+	   Both act and oact use the struct sigaction. That struct may slightly differ across architectures but these fields must comply with POSIX:
+
+	   - sa_handler: pointer to an ANSI C handler function.
+		- Possible values: SIG_DFL - Default action.
+				   SIG_IGN - Ignore the signal.
+				   void (*sa_handler)(int).
+	   - sa_sigaction: pointer to a POSIX handler function.
+		- Possible values: void (*sa_sigaction)(int, siginfo_t *, void *).
+	   - sa_mask: mask of signals to be blocked during signal handling.
+	   - sa_flags: set of flags that modifies the behaviour of the signal.
+
+	d) It is not safe to use static or global variables in the signal handling code because multiple instances of the same signal could be delivered simultaneously from different processes as we can't control when they arrive.
+
+	e) Async-signal-safe functions.
+
+	
